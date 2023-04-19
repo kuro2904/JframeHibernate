@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 19, 2023, 11:51:42 AM by Hibernate Tools 4.3.6.Final -->
+<hibernate-mapping>
+    <class name="domain.Sinhvien" table="sinhvien" catalog="qlsv" optimistic-lock="version">
+        <id name="mssv" type="java.lang.Integer">
+            <column name="mssv" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lop" class="domain.Lop" fetch="select">
+            <column name="malop" not-null="true" />
+        </many-to-one>
+        <property name="hoten" type="string">
+            <column name="hoten" length="50" />
+        </property>
+        <property name="dtb" type="java.lang.Double">
+            <column name="dtb" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>
